@@ -1,0 +1,22 @@
+<nav>
+    <div class="navbar">
+        <img src="/images/logo.png" alt="LOGO">
+        <div class="searchbar">
+            <i class="uil uil-search"></i>
+            <input type="search" placeholder="search" value="<%= typeof search !== 'undefined' ? search : '' %>">
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="/movies">Movies</a></li>
+                <% if (typeof user !== 'undefined') { %>
+                    <li><a href="/watchlist">WatchList</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                <% } else { %>
+                    <li><a href="/help">Help</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/signup">Sign Up</a></li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</nav>

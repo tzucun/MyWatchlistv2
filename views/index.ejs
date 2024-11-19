@@ -1,0 +1,31 @@
+<%- include('partials/header') %>
+<%- include('partials/nav') %>
+
+<div class="topside">
+    <div class="slider">
+        <div class="images">
+            <% featuredMovies.forEach(function(movie) { %>
+                <img src="/images/<%= movie.image %>" alt="<%= movie.title %>">
+            <% }); %>
+        </div>
+        <button class="prev" onclick="prevSlide()"><i class="uil uil-angle-left-b"></i></button>
+        <button class="next" onclick="nextSlide()"><i class="uil uil-angle-right-b"></i></button>
+    </div>  
+
+    <div class="recommended">
+        <div class="rectext">
+            <h2>Recommended</h2>
+        </div>
+        <div class="moovies">
+            <% recommendedMovies.forEach(function(movie) { %>
+                <div class="movie-card">
+                    <img src="/images/<%= movie.cover_image_url %>" alt="<%= movie.title %>">
+                    <h3><%= movie.title %></h3>
+                    <p>Rating: <%= movie.rating_average %></p>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>
